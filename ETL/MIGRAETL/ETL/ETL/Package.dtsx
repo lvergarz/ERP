@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
@@ -1068,4 +1069,1076 @@ FROM EMPRESAS;</property>
     </LayoutInfo>
   </TaskHost>
 </Objects>]]></DTS:DesignTimeProperties>
+=======
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/18/2017 1:04:21 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SOLINTSA_ACER"
+  DTS:CreatorName="SOLINTSA_ACER\SOLINTSA"
+  DTS:DTSID="{B80B6B43-4603-4EBB-A515-0EF8DC08CEDC}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="12298"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{BE0D66D4-2628-4C51-BEC8-46C3967A1755}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.db_comsucre1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FB4F7463-FC5D-44E0-910D-CA499CCF8B1C}"
+      DTS:ObjectName="LocalHost.db_comsucre1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=db_comsucre;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MS Access Database.admin]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{F0170D8C-D419-465D-BE32-661A947FEC36}"
+      DTS:ObjectName="MS Access Database.admin">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="uid=admin;Dsn=MS Access Database;dbq=D:\VENTAS.mdb;defaultdir=D:;driverid=25;fil=MS Access;maxbuffersize=2048;pagetimeout=5;">
+          <DTS:Password
+            DTS:Name="pwd"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAxTZ3/6vbp0WgG5UYInz5VAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACJM7FllDTMsDP+MmzC6Vg5lEhXwBHZKkYrrRJaDr8gMwAAAAAOgAAAAAIAACAAAABFmGY7P3sAWxYGZMeptVVjdAG1h3yd6aPZZQ49cq+JiyAAAADrC1CWVOATU7SLSpdsETohzCqIBWUh0UNwXes9JtgoskAAAADYnFTr/WRVB0lZv05V9KtdkqDmp1GU084twfDsbVtuSXvvYrx7LPd8efAGnCoa52CL9505Wg1bgY35/e4Pdi9m</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Ejecutar SQL"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{A2D0F2C5-E8BD-4BF8-A51E-97C86795B543}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Ejecutar SQL"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FB4F7463-FC5D-44E0-910D-CA499CCF8B1C}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="truncate table [db_comsucre].[db_empresa].[tb_empresa]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Flujo de datos"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{A9496EB6-5BBD-4919-A698-6D97F8F41C1D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Flujo de datos"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tarea Flujo de datos\Comando de OLE DB"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
+              name="Comando de OLE DB"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">exec [db_empresa].[sp_empresa_Insert] ?,?,?,?,?,?,?,?,?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\Comando de OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.db_comsucre1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.db_comsucre1]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
+                  errorOrTruncationOperation="Ejecución de comando"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de comando de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[AEMNOMBRE]"
+                      cachedDataType="wstr"
+                      cachedLength="35"
+                      cachedName="AEMNOMBRE"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@nombre]"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMNOMBRE]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[AEMORGANI]"
+                      cachedDataType="wstr"
+                      cachedLength="45"
+                      cachedName="AEMORGANI"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@descripcion]"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMORGANI]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[AEMDIRECCION]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="AEMDIRECCION"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@direccion]"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMDIRECCION]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[AEMTELEFONOS]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="AEMTELEFONOS"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@telefono]"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMTELEFONOS]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[AEMREPRELEGAL]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="AEMREPRELEGAL"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@representantelegal]"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMREPRELEGAL]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[AEMRUC]"
+                      cachedDataType="wstr"
+                      cachedLength="13"
+                      cachedName="AEMRUC"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@ruc]"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMRUC]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[AEMESTADO]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="AEMESTADO"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@estado]"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMESTADO]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[AEMTIPEMP]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="AEMTIPEMP"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@tipoEmpresa]"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMTIPEMP]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[imagen]"
+                      cachedDataType="nText"
+                      cachedName="imagen"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@imagen]"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[imagen]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@ruc]"
+                      dataType="wstr"
+                      length="13"
+                      name="@ruc">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@nombre]"
+                      dataType="wstr"
+                      length="100"
+                      name="@nombre">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@descripcion]"
+                      dataType="wstr"
+                      length="500"
+                      name="@descripcion">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@direccion]"
+                      dataType="wstr"
+                      length="200"
+                      name="@direccion">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@telefono]"
+                      dataType="wstr"
+                      length="100"
+                      name="@telefono">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@representantelegal]"
+                      dataType="wstr"
+                      length="200"
+                      name="@representantelegal">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@estado]"
+                      dataType="wstr"
+                      length="1"
+                      name="@estado">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@imagen]"
+                      dataType="wstr"
+                      length="50"
+                      name="@imagen">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[@tipoEmpresa]"
+                      dataType="wstr"
+                      length="1"
+                      name="@tipoEmpresa">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Comando de OLE DB.Outputs[Salida de comando de OLE DB]"
+                  exclusionGroup="1"
+                  name="Salida de comando de OLE DB"
+                  synchronousInputId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de comando de OLE DB"
+                  synchronousInputId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\Conversión de datos"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Conversión de datos;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Conversión de datos"
+              name="Conversión de datos"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos]"
+                  name="Entrada de conversión de datos">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[AEMNOMBRE]"
+                      cachedDataType="wstr"
+                      cachedLength="35"
+                      cachedName="AEMNOMBRE"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMNOMBRE]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[AEMORGANI]"
+                      cachedDataType="wstr"
+                      cachedLength="45"
+                      cachedName="AEMORGANI"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMORGANI]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[AEMDIRECCION]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="AEMDIRECCION"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMDIRECCION]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[AEMTELEFONOS]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="AEMTELEFONOS"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMTELEFONOS]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[AEMREPRELEGAL]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="AEMREPRELEGAL"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMREPRELEGAL]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[AEMRUC]"
+                      cachedDataType="wstr"
+                      cachedLength="13"
+                      cachedName="AEMRUC"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMRUC]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[AEMESTADO]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="AEMESTADO"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMESTADO]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[AEMTIPEMP]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="AEMTIPEMP"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMTIPEMP]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[imagen]"
+                      cachedDataType="nText"
+                      cachedName="imagen"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[imagen]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos]"
+                  exclusionGroup="1"
+                  name="Salida de conversión de datos"
+                  synchronousInputId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de AEMNOMBRE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      length="35"
+                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de AEMNOMBRE]"
+                      name="Copia de AEMNOMBRE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMNOMBRE]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de AEMORGANI]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      length="45"
+                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de AEMORGANI]"
+                      name="Copia de AEMORGANI"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMORGANI]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de AEMDIRECCION]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      length="40"
+                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de AEMDIRECCION]"
+                      name="Copia de AEMDIRECCION"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMDIRECCION]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de AEMTELEFONOS]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      length="40"
+                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de AEMTELEFONOS]"
+                      name="Copia de AEMTELEFONOS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMTELEFONOS]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de AEMREPRELEGAL]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de AEMREPRELEGAL]"
+                      name="Copia de AEMREPRELEGAL"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMREPRELEGAL]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de AEMRUC]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      length="13"
+                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de AEMRUC]"
+                      name="Copia de AEMRUC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMRUC]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de AEMESTADO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      length="1"
+                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de AEMESTADO]"
+                      name="Copia de AEMESTADO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMESTADO]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de AEMTIPEMP]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      length="1"
+                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de AEMTIPEMP]"
+                      name="Copia de AEMTIPEMP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMTIPEMP]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de imagen]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de imagen]"
+                      name="Copia de imagen"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[imagen]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de conversión de datos"
+                  synchronousInputId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\Origen ODBC"
+              componentClassID="Attunity.SSISODBCSrc"
+              contactInfo="ODBC Source;Connector for Open Database Connectivity (ODBC) by Attunity; Attunity Ltd.; All Rights Reserved; http://www.attunity.com;6"
+              description="Origen ODBC"
+              name="Origen ODBC"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla que se va a recuperar."
+                  expressionType="Notify"
+                  name="TableName"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL que se va a ejecutar."
+                  expressionType="Notify"
+                  name="SqlCommand">SELECT EMPRESAS.AEMNOMBRE, EMPRESAS.AEMORGANI, EMPRESAS.AEMDIRECCION, EMPRESAS.AEMTELEFONOS, EMPRESAS.AEMREPRELEGAL, EMPRESAS.AEMRUC, EMPRESAS.AEMESTADO, EMPRESAS.AEMTIPEMP,
+' ' as imagen
+FROM EMPRESAS;</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas recuperadas por lote."
+                  expressionType="Notify"
+                  name="BatchSize">1000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Determina la asignación del tamaño del fragmento para columnas LOB."
+                  expressionType="Notify"
+                  name="LobChunkSize">32768</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina cómo expone el componente las columnas CHAR. Si es False, las columnas CHAR se exponen como cadenas (multi)byte (DT_STR); si es True, las columnas CHAR se exponen como cadenas de caracteres anchos (DT_WSTR)"
+                  expressionType="Notify"
+                  name="ExposeCharColumnsAsUnicode">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos que se debe esperar para que se ejecute una instrucción SQL antes de volver a la aplicación."
+                  expressionType="Notify"
+                  name="StatementTimeout">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Página de códigos que se usará cuando la información de página de códigos no esté disponible en el origen de datos."
+                  expressionType="Notify"
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Int32"
+                  description="Modo usado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Método usado para recuperar datos."
+                  expressionType="Notify"
+                  name="FetchMethod"
+                  typeConverter="FetchMethod">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Tipo de datos ODBC para enlazar datos numéricos."
+                  expressionType="Notify"
+                  name="BindNumericAs"
+                  typeConverter="BindNumericAs">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Determina cómo enlazaría el componente columnas de tipos de cadena (multi)byte (por ejemplo, SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). Las opciones son: Unicode (SQL_C_WCHAR) y ANSI (SQL_C_CHAR)."
+                  expressionType="Notify"
+                  name="BindCharColumnsAs"
+                  typeConverter="BindCharColumnsAs">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\Origen ODBC.Connections[ODBCConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MS Access Database.admin]"
+                  connectionManagerRefId="Package.ConnectionManagers[MS Access Database.admin]"
+                  description="La conexión de tiempo de ejecución de ODBC"
+                  name="ODBCConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC]"
+                  errorRowDisposition="FailComponent"
+                  name="Resultado de origen ODBC"
+                  truncationRowDisposition="FailComponent">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMNOMBRE]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[AEMNOMBRE]"
+                      length="35"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMNOMBRE]"
+                      name="AEMNOMBRE" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMORGANI]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[AEMORGANI]"
+                      length="45"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMORGANI]"
+                      name="AEMORGANI" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMDIRECCION]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[AEMDIRECCION]"
+                      length="40"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMDIRECCION]"
+                      name="AEMDIRECCION" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMTELEFONOS]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[AEMTELEFONOS]"
+                      length="40"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMTELEFONOS]"
+                      name="AEMTELEFONOS" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMREPRELEGAL]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[AEMREPRELEGAL]"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMREPRELEGAL]"
+                      name="AEMREPRELEGAL" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMRUC]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[AEMRUC]"
+                      length="13"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMRUC]"
+                      name="AEMRUC" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMESTADO]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[AEMESTADO]"
+                      length="1"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMESTADO]"
+                      name="AEMESTADO" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMTIPEMP]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[AEMTIPEMP]"
+                      length="1"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[AEMTIPEMP]"
+                      name="AEMTIPEMP" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[imagen]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[imagen]"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].Columns[imagen]"
+                      name="imagen" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[AEMNOMBRE]"
+                      dataType="wstr"
+                      length="35"
+                      name="AEMNOMBRE" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[AEMORGANI]"
+                      dataType="wstr"
+                      length="45"
+                      name="AEMORGANI" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[AEMDIRECCION]"
+                      dataType="wstr"
+                      length="40"
+                      name="AEMDIRECCION" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[AEMTELEFONOS]"
+                      dataType="wstr"
+                      length="40"
+                      name="AEMTELEFONOS" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[AEMREPRELEGAL]"
+                      dataType="wstr"
+                      length="50"
+                      name="AEMREPRELEGAL" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[AEMRUC]"
+                      dataType="wstr"
+                      length="13"
+                      name="AEMRUC" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[AEMESTADO]"
+                      dataType="wstr"
+                      length="1"
+                      name="AEMESTADO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[AEMTIPEMP]"
+                      dataType="wstr"
+                      length="1"
+                      name="AEMTIPEMP" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[imagen]"
+                      dataType="nText"
+                      name="imagen" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Salida de error de origen ODBC]"
+                  isErrorOut="true"
+                  name="Salida de error de origen ODBC">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Salida de error de origen ODBC].Columns[AEMNOMBRE]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[AEMNOMBRE]"
+                      length="35"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Salida de error de origen ODBC].Columns[AEMNOMBRE]"
+                      name="AEMNOMBRE" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Salida de error de origen ODBC].Columns[AEMORGANI]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[AEMORGANI]"
+                      length="45"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Salida de error de origen ODBC].Columns[AEMORGANI]"
+                      name="AEMORGANI" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Salida de error de origen ODBC].Columns[AEMDIRECCION]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[AEMDIRECCION]"
+                      length="40"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Salida de error de origen ODBC].Columns[AEMDIRECCION]"
+                      name="AEMDIRECCION" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Salida de error de origen ODBC].Columns[AEMTELEFONOS]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[AEMTELEFONOS]"
+                      length="40"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Salida de error de origen ODBC].Columns[AEMTELEFONOS]"
+                      name="AEMTELEFONOS" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Salida de error de origen ODBC].Columns[AEMREPRELEGAL]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[AEMREPRELEGAL]"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Salida de error de origen ODBC].Columns[AEMREPRELEGAL]"
+                      name="AEMREPRELEGAL" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Salida de error de origen ODBC].Columns[AEMRUC]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[AEMRUC]"
+                      length="13"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Salida de error de origen ODBC].Columns[AEMRUC]"
+                      name="AEMRUC" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Salida de error de origen ODBC].Columns[AEMESTADO]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[AEMESTADO]"
+                      length="1"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Salida de error de origen ODBC].Columns[AEMESTADO]"
+                      name="AEMESTADO" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Salida de error de origen ODBC].Columns[AEMTIPEMP]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[AEMTIPEMP]"
+                      length="1"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Salida de error de origen ODBC].Columns[AEMTIPEMP]"
+                      name="AEMTIPEMP" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Salida de error de origen ODBC].Columns[imagen]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC].ExternalColumns[imagen]"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Salida de error de origen ODBC].Columns[imagen]"
+                      name="imagen" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Salida de error de origen ODBC].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Salida de error de origen ODBC].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Salida de error de origen ODBC].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Salida de error de origen ODBC].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Resultado de origen ODBC]"
+              endId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos]"
+              name="Resultado de origen ODBC"
+              startId="Package\Tarea Flujo de datos\Origen ODBC.Outputs[Resultado de origen ODBC]" />
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Salida de conversión de datos]"
+              endId="Package\Tarea Flujo de datos\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
+              name="Salida de conversión de datos"
+              startId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{FF45A560-512E-4AEE-A3C2-F38B8B0A2D70}"
+      DTS:From="Package\Tarea Ejecutar SQL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Tarea Flujo de datos" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Tarea Flujo de datos"
+          TopLeft="130,131" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Tarea Ejecutar SQL"
+          TopLeft="109,43" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="194,85">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24,46"
+              Start="0,0"
+              End="24,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19"
+                    Point2="0,23"
+                    Point3="4,23" />
+                  <mssgle:LineSegment
+                    End="20,23" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20,23"
+                    Point2="24,23"
+                    Point3="24,27" />
+                  <mssgle:LineSegment
+                    End="24,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Tarea Flujo de datos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Tarea Flujo de datos\Origen ODBC"
+          TopLeft="219,59" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Tarea Flujo de datos\Conversión de datos"
+          TopLeft="228,138" />
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Resultado de origen ODBC]"
+          TopLeft="289.5,101">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26,37"
+              Start="0,0"
+              End="26,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="4,18.5" />
+                  <mssgle:LineSegment
+                    End="22,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22,18.5"
+                    Point2="26,18.5"
+                    Point3="26,22.5" />
+                  <mssgle:LineSegment
+                    End="26,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Tarea Flujo de datos\Comando de OLE DB"
+          TopLeft="215,246" />
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de conversión de datos]"
+          TopLeft="315.5,180">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12,66"
+              Start="0,0"
+              End="-12,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29"
+                    Point2="0,33"
+                    Point3="-4,33" />
+                  <mssgle:LineSegment
+                    End="-8,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8,33"
+                    Point2="-12,33"
+                    Point3="-12,37" />
+                  <mssgle:LineSegment
+                    End="-12,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+>>>>>>> b4a1c7b14fd85db199ae2e3ef0388a3a71619093
 </DTS:Executable>

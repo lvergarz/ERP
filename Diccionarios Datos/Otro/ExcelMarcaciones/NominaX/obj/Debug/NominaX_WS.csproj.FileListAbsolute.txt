@@ -1,0 +1,16 @@
+C:\Users\SystemHost\source\repos\NominaX\NominaX\bin\NominaX.dll.config
+C:\Users\SystemHost\source\repos\NominaX\NominaX\bin\NominaX.dll
+C:\Users\SystemHost\source\repos\NominaX\NominaX\bin\NominaX.pdb
+C:\Users\SystemHost\source\repos\NominaX\NominaX\bin\EntityFramework.dll
+C:\Users\SystemHost\source\repos\NominaX\NominaX\bin\EntityFramework.SqlServer.dll
+C:\Users\SystemHost\source\repos\NominaX\NominaX\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\SystemHost\source\repos\NominaX\NominaX\bin\NomiaX_Library.dll
+C:\Users\SystemHost\source\repos\NominaX\NominaX\bin\NomiaX_Library.pdb
+C:\Users\SystemHost\source\repos\NominaX\NominaX\bin\NomiaX_Library.dll.config
+C:\Users\SystemHost\source\repos\NominaX\NominaX\bin\EntityFramework.xml
+C:\Users\SystemHost\source\repos\NominaX\NominaX\bin\EntityFramework.SqlServer.xml
+C:\Users\SystemHost\source\repos\NominaX\NominaX\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\SystemHost\source\repos\NominaX\NominaX\obj\Debug\NominaX_WS.csprojResolveAssemblyReference.cache
+C:\Users\SystemHost\source\repos\NominaX\NominaX\obj\Debug\NominaX_WS.csproj.CoreCompileInputs.cache
+C:\Users\SystemHost\source\repos\NominaX\NominaX\obj\Debug\NominaX.dll
+C:\Users\SystemHost\source\repos\NominaX\NominaX\obj\Debug\NominaX.pdb
