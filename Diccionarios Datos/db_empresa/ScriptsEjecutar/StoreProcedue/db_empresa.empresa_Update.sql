@@ -26,7 +26,6 @@ CREATE PROCEDURE [db_empresa].[sp_empresa_Update]
 	@direccion VARCHAR(200),
 	@telefono VARCHAR(100),
 	@representantelegal VARCHAR(200),
-	@estado ,
 	@imagen VARCHAR(50),
 	@estadoexistencia VARCHAR(1),
 	@trx VARCHAR(5) null,
@@ -54,8 +53,6 @@ direccion=case when @direccion IS NULL then direccion else @direccion end,
 telefono=case when @telefono IS NULL then telefono else @telefono end,
 			
 representantelegal=case when @representantelegal IS NULL then representantelegal else @representantelegal end,
-			
-estado=case when @estado IS NULL then estado else @estado end,
 			
 imagen=case when @imagen IS NULL then imagen else @imagen end,
 			

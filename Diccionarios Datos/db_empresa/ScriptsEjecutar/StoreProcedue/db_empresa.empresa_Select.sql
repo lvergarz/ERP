@@ -30,7 +30,6 @@ CREATE PROCEDURE [db_empresa].[sp_empresa_Select]
 	@direccion VARCHAR(200),
 	@telefono VARCHAR(100),
 	@representantelegal VARCHAR(200),
-	@estado ,
 	@imagen VARCHAR(50),
 	@estadoexistencia VARCHAR(1),
 	@trx VARCHAR(5) null,
@@ -42,7 +41,7 @@ BEGIN
 BEGIN TRANSACTION transaccionSql
     BEGIN TRY
        
-	Select uid_empresa,ruc,nombre,descripcion,direccion,telefono,representantelegal,estado,imagen,estadoexistencia
+	Select uid_empresa,ruc,nombre,descripcion,direccion,telefono,representantelegal,imagen,estadoexistencia
 	From [db_empresa].[tb_empresa]
 	Where (uid_empresa=@uid_empresa or @uid_empresa IS NULL) and
 (ruc=@ruc or @ruc IS NULL) and
@@ -51,7 +50,6 @@ BEGIN TRANSACTION transaccionSql
 (direccion=@direccion or @direccion IS NULL) and
 (telefono=@telefono or @telefono IS NULL) and
 (representantelegal=@representantelegal or @representantelegal IS NULL) and
-(estado=@estado or @estado IS NULL) and
 (imagen=@imagen or @imagen IS NULL) and
 (estadoexistencia=@estadoexistencia or @estadoexistencia IS NULL)	
 

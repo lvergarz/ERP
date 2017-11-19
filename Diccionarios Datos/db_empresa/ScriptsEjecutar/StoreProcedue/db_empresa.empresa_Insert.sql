@@ -26,7 +26,6 @@ CREATE PROCEDURE [db_empresa].[sp_empresa_Insert]
 	@direccion VARCHAR(200),
 	@telefono VARCHAR(100),
 	@representantelegal VARCHAR(200),
-	@estado ,
 	@imagen VARCHAR(50),
 	@estadoexistencia VARCHAR(1),
 	@trx VARCHAR(5) null,
@@ -48,7 +47,6 @@ BEGIN
 			direccion,
 			telefono,
 			representantelegal,
-			estado,
 			imagen,
 			estadoexistencia
 	) 
@@ -60,7 +58,6 @@ BEGIN
 			@direccion,
 			@telefono,
 			@representantelegal,
-			@estado,
 			@imagen,
 			@estadoexistencia
 	);

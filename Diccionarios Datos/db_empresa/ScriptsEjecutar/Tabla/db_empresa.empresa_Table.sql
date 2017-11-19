@@ -29,7 +29,6 @@ descripcion VARCHAR(500) NOT NULL ,
 direccion VARCHAR(200) NOT NULL ,
 telefono VARCHAR(100) NOT NULL ,
 representantelegal VARCHAR(200) NOT NULL ,
-estado  NOT NULL ,
 imagen VARCHAR(50) NOT NULL ,
 estadoexistencia VARCHAR(1) NOT NULL 
 	);
